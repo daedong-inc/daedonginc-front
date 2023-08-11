@@ -72,10 +72,3 @@ export const getTypographyStyles = (
     font-family: ${PRETENDARD_FONT_FAMILY};
   `;
 };
-
-export const BannerTypographStyles = css`
-    fontSize: 70px;
-    lineHeight: 60px;
-    fontWeight: 700;
-    font-family: Lato;
-  }`;
