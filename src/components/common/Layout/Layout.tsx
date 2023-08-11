@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import Nav from './Nav';
-import { Container } from './Layout.style';
+import { NavContainer, Container } from './Layout.style';
 
 // interface Props {
 //   children: React.ReactNode;
@@ -9,7 +9,9 @@ import { Container } from './Layout.style';
 const Layout = () => {
   return (
     <>
-      <Nav />
+      <NavContainer>
+        <Nav />
+      </NavContainer>
       <Container>
         <Outlet />
       </Container>

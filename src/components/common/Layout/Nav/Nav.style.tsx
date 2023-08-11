@@ -6,18 +6,26 @@ import theme from 'theme';
 
 export const TopNavContainer = styled.div`
   position: fixed;
+  margin: 0 auto;
   z-index: ${Z_INDEX.navBar};
-  width: 100%;
+  width: 75%;
   height: 80px;
   background-color: transparent;
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
 `;
-// align-items: center;
+
+export const LeftContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: auto;
+`;
 
 export const LogoButton = styled.button`
   all: unset;
   border: 0;
-  margin: 0 3rem;
   background: none;
   display: flex;
   align-items: center;
@@ -33,4 +41,11 @@ export const NavMenu = styled.ul`
   ${getTypographyStyles('Body2_r')};
   cursor: pointer;
   color: ${theme.colors.white};
+`;
+
+export const SearchWrapper = styled.div`
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  justifycontent: flex-end;
 `;
