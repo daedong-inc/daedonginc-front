@@ -1,7 +1,7 @@
+import Layout from 'components/common/Layout';
 
-function App() {
-
-  return <div className="App">daedong-FE</div>;
-}
+const App: React.FC = () => {
+  return <Layout />;
+};
 
 export default App;
