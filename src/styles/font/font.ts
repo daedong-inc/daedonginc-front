@@ -9,6 +9,16 @@ export const TYPOGRAPHY_STYLES = {
     lineHeight: 64,
     fontWeight: 700,
   },
+  Heading2: {
+    fontSize: 40,
+    lineHeight: 54,
+    fontWeight: 700,
+  },
+  Heading3: {
+    fontSize: 30,
+    lineHeight: 44,
+    fontWeight: 700,
+  },
   Body1_b: {
     fontSize: 24,
     lineHeight: 34,
@@ -62,3 +72,10 @@ export const getTypographyStyles = (
     font-family: ${PRETENDARD_FONT_FAMILY};
   `;
 };
+
+export const BannerTypographStyles = css`
+    fontSize: 70px;
+    lineHeight: 60px;
+    fontWeight: 700;
+    font-family: Lato;
+  }`;

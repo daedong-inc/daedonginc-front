@@ -8,9 +8,6 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ width = 200, height = 100 }) => {
-  return (
-      <img src={LogoSvg} alt="DaeDongLogo" style={{ width, height }} />
-  );
+  return <img src={LogoSvg} alt="DaeDongLogo" style={{ width, height }} />;
 };
 export default Logo;
-

@@ -7,6 +7,11 @@ export interface Theme {
     gray3: string; //화살표 슬라이드 버튼
     background: string; //이미지 없음 배경
   };
+  media: {
+    desktop_L: string;
+    desktop_S: string;
+    mobile: string;
+  };
 }
 
 const theme: Theme = {
@@ -17,6 +22,11 @@ const theme: Theme = {
     gray2: '#BDBDBD',
     gray3: '#D9D9D9',
     background: '#F6F6F6',
+  },
+  media: {
+    desktop_L: '@media (min-width: 1025px)',
+    desktop_S: '@media (min-width: 1024px) and (max-width: 361px)',
+    mobile: '@media (max-width: 360px) ',
   },
 };
 
