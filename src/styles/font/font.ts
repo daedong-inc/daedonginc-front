@@ -72,3 +72,17 @@ export const getTypographyStyles = (
     font-family: ${PRETENDARD_FONT_FAMILY};
   `;
 };
+
+export const MakeNewTypographStyles = (
+  fontFamily: string,
+  fontWeight: number | string,
+  fontSize: number,
+  lineHeight: number,
+) => {
+  return css`
+    font-family: ${fontFamily};
+    font-weight: ${fontWeight};
+    font-size: ${fontSize}px;
+    line-height: ${lineHeight}px;
+  `;
+};
