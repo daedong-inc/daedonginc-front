@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Z_INDEX } from 'styles/constants';
-import { getTypographyStyles } from 'styles/font/font';
+import { getNotoTypographyStyles } from 'styles/font/font';
 import { mediaQuery } from 'styles/mediaQuery';
 import theme from 'theme';
 
@@ -38,7 +38,7 @@ export const NavMenu = styled.ul`
   align-items: center;
   list-style: none;
   justify-content: space-between;
-  ${getTypographyStyles('Body2_r')};
+  ${getNotoTypographyStyles('Body2_r')};
   cursor: pointer;
   color: ${theme.colors.white};
 `;

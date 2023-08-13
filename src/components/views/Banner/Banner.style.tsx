@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { mediaQuery } from 'styles/mediaQuery';
-import { MakeNewTypographStyles, getTypographyStyles } from 'styles/font/font';
+import { MakeNewTypographStyles, getNotoTypographyStyles } from 'styles/font/font';
 import theme from 'theme';
 
 interface WrapperProps {
@@ -55,7 +55,7 @@ export const Title = styled.p`
 //   word-break: keep-all;
 
 export const Description = styled.p`
-  ${getTypographyStyles('Body2_b')}
+  ${getNotoTypographyStyles('Body2_b')}
   margin-bottom: 30px;
 `;
 
