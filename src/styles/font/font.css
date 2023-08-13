@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont,
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont,
     system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
     'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
     sans-serif;
@@ -12,7 +12,7 @@ body {
   font-style: normal;
   font-weight: 400;
   src: local('NotoSansKR'), local('NotoSansKR-Regular'),
-    url('./NotoSansKR-Regular.otf') format('opentype');
+    url('./noto/NotoSansKR-Regular.otf') format('opentype');
 }
 /* noto-sans-kr-500 - latin */
 @font-face {
@@ -20,7 +20,7 @@ body {
   font-style: normal;
   font-weight: 500;
   src: local('NotoSansKR Medium'), local('NotoSansKR-Medium'),
-    url('./NotoSansKR-Medium.otf') format('opentype');
+    url('./noto/NotoSansKR-Medium.otf') format('opentype');
 }
 /* noto-sans-kr-700 - latin */
 @font-face {
@@ -28,5 +28,32 @@ body {
   font-style: normal;
   font-weight: 700;
   src: local('NotoSansKR Bold'), local('NotoSansKR-Bold'),
-    url('./NotoSansKR-Bold.otf') format('opentype');
+    url('./noto/NotoSansKR-Bold.otf') format('opentype');
+}
+
+/* Lato Regular */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'),
+    url('./lato/Lato-Regular.ttf') format('truetype');
+}
+
+/* Lato Bold */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'),
+    url('./lato/Lato-Bold.ttf') format('truetype');
+}
+
+/* Lato Light */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'),
+    url('./lato/Lato-Light.ttf') format('truetype');
 }
