@@ -1,17 +1,17 @@
 /* Navigation 버튼 */
 .swiper-button-prev {
   position: absolute;
-  top: 70%;
-  left: calc(50% - 200px);
+  top: 75%;
+  left: calc(50% - 100px);
   transform: translateY(-50%);
 }
 
 .swiper-button-next {
   position: absolute;
-  transform: rotate(180deg);
-  transform-origin: top right; /* 회전 기준점을 오른쪽 상단으로 지정 */
-  top: 70%;
-  right: calc(50% - 200px);
+  transform: translateY(-50%) rotate(180deg);
+  transform-origin: center; /* 회전 기준점을 가운데로 지정 */
+  top: 75%;
+  right: calc(50% - 100px);
 }
 
 .swiper-button-prev:after,
@@ -22,35 +22,59 @@
 }
 
 /* 페이지네이션 아이콘 */
-.swiper-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
   top: 70%;
+  width: 100%;
+}
+
+.swiper-pagination {
+  position: absolute;
+  text-align: center;
+  top: 70%;
+  z-index: 5;
 }
 
 .swiper-pagination-bullet {
-  width: 10px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
   font-family: 'Lato';
   font-weight: 600;
   font-size: 16px;
   line-height: 26px;
 
-  margin: 0 5px;
-  border-radius: 0;
-  background: none;
+  /* margin: 0 5px; */
+  border-radius: 50%;
+  border-color: none;
+  background-color: transparent;
   opacity: 1;
-  font-size: 14px;
-  color: white;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .swiper-pagination-bullet-active {
-  content: '○';
+  border: 1.5px solid #fff;
 }
+
+/* .swiper-pagination-bullet-active-main {
+} */
+
+/* .sample-slider .swiper-pagination-bullet{  
+  width: 25px;                           
+  height: 25px;                           
+  display: inline-flex;                   
+  align-items: center;                    
+  justify-content: center;            
+  color: #fff;                       
+}    */
+
 /**
  * Swiper 10.1.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions

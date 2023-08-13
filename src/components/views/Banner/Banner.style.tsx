@@ -31,15 +31,16 @@ export const SwiperWrapper = styled.div<WrapperProps>`
   background-repeat: no-repeat;
   background-position: center center;
 `;
+// transform: translateX(-50%);
 
 // &::before {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   background-color: rgba(0,0,0,1); /* 회색으로 어둡게 설정
-  // }
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: rgba(0,0,0,1); /* 회색으로 어둡게 설정
+// }
 // background-size: 100% ${mediaQuery.tablet`
 //   padding: 40px 20px;
 // `};
@@ -47,8 +48,22 @@ export const SwiperWrapper = styled.div<WrapperProps>`
 export const Title = styled.p`
   ${MakeNewTypographStyles('Lato', 700, 70, 60)}
 `;
+// 위치 고민중
+// justify-content: flex-start;
+// margin-top: 20%;
+// margin-bottom: 3rem;
 //   word-break: keep-all;
 
 export const Description = styled.p`
   ${getTypographyStyles('Body2_b')}
+  margin-bottom: 30px;
 `;
+
+export const ScrollIcon = styled.img`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+`;
+

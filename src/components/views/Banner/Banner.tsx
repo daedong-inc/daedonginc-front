@@ -10,7 +10,7 @@ import './CustomSwiper.css';
 export interface CarouselDataType {
   img: string;
   title: string;
-  description: string;
+  description: JSX.Element;
 }
 
 const Banner = () => {
@@ -18,12 +18,22 @@ const Banner = () => {
     {
       img: `https://picsum.photos/1440/980?random=${Math.random()}`,
       title: 'COSMETIC',
-      description:
-        '뛰어난 기술력을 바탕으로 고품질의 제품을 지속적으로 개발하고 있습니다.',
+      description: (
+        <>
+          뛰어난 기술력을 바탕으로 고품질의 제품을
+          <br />
+          지속적으로 개발하고 있습니다.
+        </>
+      ),
     },
     {
       img: `https://picsum.photos/1440/980?random=${Math.random()}`,
       title: '2',
+      description: 'fsdcsdfasdfasdf.',
+    },
+    {
+      img: `https://picsum.photos/1440/980?random=${Math.random()}`,
+      title: '3',
       description: 'fsdcsdfasdfasdf.',
     },
   ];
@@ -31,21 +41,24 @@ const Banner = () => {
   return (
     <S.Wrapper>
       <Swiper
-        slidesPerView={1}
+        modules={[Pagination, Navigation]}
         spaceBetween={30}
-        loop={true}
+        slidesPerView={1}
+        navigation={true}
         pagination={{
+          renderBullet: function (index, className) {
+            return `<span class="${className}">${index + 1}</span>`;
+          },
           clickable: true,
         }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
+        loop={true}
       >
         {CarouselData.map((carouselItem, idx) => (
           <SwiperSlide key={`carousel${idx}`}>
             <S.SwiperWrapper img={carouselItem.img}>
               <S.Title>{carouselItem.title}</S.Title>
               <S.Description>{carouselItem.description}</S.Description>
+              <S.ScrollIcon src="src/assets/icons/scroll.svg" />
             </S.SwiperWrapper>
           </SwiperSlide>
         ))}
