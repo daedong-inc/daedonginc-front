@@ -65,11 +65,10 @@ const Introduction = () => {
 export default Introduction;
 
 const Container = styled.div`
-  width:80vw
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 `;
 
 const Section1 = styled.div`
@@ -95,11 +94,7 @@ const TextArea = styled.div`
 `;
 
 const Title = styled.p`
-Heading 2-b
-  font: Lato;
-  font-size: 33px;
-  line-height: 43px;
-  font-weight: 800;
+  ${getLatoTypographyStyles('Heading3_eb')};
 `;
 
 const GridPhotosContainer = styled.div`
@@ -123,7 +118,7 @@ const GridTitle = styled.div`
 
 const SvgImage = styled.img`
   max-width: 100%;
-  max-height: 100%;
+  max-height: auto;
   transition: opacity 0.3s ease;
 `;
 
@@ -144,7 +139,7 @@ const GridDescription = styled.div`
   transition: opacity 0.3s ease, bottom 0.3s ease;
   opacity: 0;
   // 여기 폰트 정해지면 수정
-  ${getNotoTypographyStyles('Body2_b')};
+  ${getNotoTypographyStyles('Body2_b')}
 `;
 
 const GridItem = styled.div`
