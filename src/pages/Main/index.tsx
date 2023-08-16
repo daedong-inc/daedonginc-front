@@ -3,6 +3,7 @@ import Banner from '@components/views/Main/Banner';
 import Introduction from '@components/views/Main/Introduction';
 import CustomerService from '@components/views/Main/CustomerService';
 import Footer from '@components/views/Main/Footer';
+import ShowRoom from '@components/views/Main/ShowRoom';
 
 const Main = () => {
   return (
@@ -10,6 +11,7 @@ const Main = () => {
       <Banner />
       <BodyContainer>
         <Introduction />
+        <ShowRoom />
       </BodyContainer>
       <CustomerService />
       <Footer />
@@ -29,4 +31,5 @@ const BodyContainer = styled(Container)`
   width: 85%;
   max-width: 1580px;
   display: flex;
+  flex-direction: column;
 `;
