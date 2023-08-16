@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import Banner from '@components/views/Main/Banner/Banner';
-import Introduction from '@components/views/Main/Introduction/Introductions';
-import Footer from '@components/views/Main/CustomerService/CustomerService';
+import Banner from '@components/views/Main/Banner';
+import Introduction from '@components/views/Main/Introduction';
+import CustomerService from '@components/views/Main/CustomerService';
+import Footer from '@components/views/Main/Footer';
 
 const Main = () => {
   return (
@@ -10,6 +11,7 @@ const Main = () => {
       <BodyContainer>
         <Introduction />
       </BodyContainer>
+      <CustomerService />
       <Footer />
     </Container>
   );
