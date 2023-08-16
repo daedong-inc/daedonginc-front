@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Banner from '@components/views/Banner/Banner';
-import Introduction from '@components/views/Introduction/Introductions';
-import Footer from '@components/views/Footer/Footer';
+import Banner from '@components/views/Main/Banner/Banner';
+import Introduction from '@components/views/Main/Introduction/Introductions';
+import Footer from '@components/views/Main/CustomerService/CustomerService';
 
 const Main = () => {
   return (
