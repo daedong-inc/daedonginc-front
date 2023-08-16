@@ -4,7 +4,7 @@ import Button from '@components/common/Button/Button';
 import { ReactComponent as CommunicationIcon } from 'assets/icons/communication.svg';
 import { ReactComponent as MailIcon } from 'assets/icons/mail-pencil.svg';
 
-const Footer = () => {
+const CustomerService = () => {
   const information = {
     number: '080.12.4567',
     businessHours: 'AM 09:00-PM 06:00',
@@ -12,7 +12,7 @@ const Footer = () => {
   };
   return (
     <Container>
-      <CustomerServiceConstiner>
+      <CustomerServiceContainer>
         <CompanyInformation>
           <NumberContainer>
             고객센터
@@ -58,11 +58,11 @@ const Footer = () => {
             </div>
           </QnAWrapper>
         </QnAContainer>
-      </CustomerServiceConstiner>
+      </CustomerServiceContainer>
     </Container>
   );
 };
-export default Footer;
+export default CustomerService;
 
 const Container = styled.div`
   width: 100%;
@@ -74,7 +74,7 @@ const Container = styled.div`
   background-color: black;
 `;
 
-const CustomerServiceConstiner = styled.div`
+const CustomerServiceContainer = styled.div`
   width: 85%;
   display: grid;
   grid-template-columns: 280px auto;
