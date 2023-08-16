@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 import Banner from '@components/views/Banner/Banner';
 import Introduction from '@components/views/Introduction/Introductions';
+import Footer from '@components/views/Footer/Footer';
 
 const Main = () => {
   return (
     <Container>
       <Banner />
-      <Container2>
+      <BodyContainer>
         <Introduction />
-      </Container2>
+      </BodyContainer>
+      <Footer />
     </Container>
   );
 };
@@ -21,6 +23,8 @@ const Container = styled.div`
   text-align: center;
 `;
 
-const Container2 = styled(Container)`
-  width: 874px;
+const BodyContainer = styled(Container)`
+  width: 85%;
+  max-width: 1580px;
+  display: flex;
 `;
