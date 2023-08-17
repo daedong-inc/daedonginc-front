@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import Banner from '@components/views/Main/Banner';
 import Introduction from '@components/views/Main/Introduction';
+import ShowRoom from '@components/views/Main/ShowRoom';
+import Client from '@components/views/Main/Client/Client';
 import CustomerService from '@components/views/Main/CustomerService';
 import Footer from '@components/views/Main/Footer';
-import ShowRoom from '@components/views/Main/ShowRoom';
 
 const Main = () => {
   return (
@@ -12,6 +13,7 @@ const Main = () => {
       <BodyContainer>
         <Introduction />
         <ShowRoom />
+        <Client />
       </BodyContainer>
       <CustomerService />
       <Footer />
