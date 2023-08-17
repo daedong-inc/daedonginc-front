@@ -5,6 +5,7 @@ import ShowRoom from '@components/views/Main/ShowRoom';
 import Client from '@components/views/Main/Client/Client';
 import CustomerService from '@components/views/Main/CustomerService';
 import Footer from '@components/views/Main/Footer';
+import News from '@components/views/Main/News';
 
 const Main = () => {
   return (
@@ -14,6 +15,7 @@ const Main = () => {
         <Introduction />
         <ShowRoom />
         <Client />
+        <News />
       </BodyContainer>
       <CustomerService />
       <Footer />
