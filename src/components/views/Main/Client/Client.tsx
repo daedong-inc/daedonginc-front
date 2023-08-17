@@ -56,8 +56,11 @@ export default Client;
 
 const Container = styled.div`
   width: 100%;
-  height: 600px;
+  height: 560px;
   margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const ClientWrapper = styled.div`
