@@ -101,6 +101,7 @@ const LogoBox = styled.div`
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr 1fr;
   min-width: 872px;
+  width: 100%;
   height: auto;
   padding: 40px 0;
 `;

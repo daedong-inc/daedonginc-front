@@ -2,21 +2,25 @@ import styled from 'styled-components';
 import Banner from '@components/views/Main/Banner';
 import Introduction from '@components/views/Main/Introduction';
 import ShowRoom from '@components/views/Main/ShowRoom';
+import OurProduct from '@components/views/Main/OurProduct/OurProduct';
 import Client from '@components/views/Main/Client/Client';
+import News from '@components/views/Main/News';
 import CustomerService from '@components/views/Main/CustomerService';
 import Footer from '@components/views/Main/Footer';
-import News from '@components/views/Main/News';
 
 const Main = () => {
   return (
     <Container>
       <Banner />
-      <BodyContainer>
+      <MiniWidthContainer>
         <Introduction />
         <ShowRoom />
+      </MiniWidthContainer>
+      <OurProduct />
+      <MiniWidthContainer>
         <Client />
         <News />
-      </BodyContainer>
+      </MiniWidthContainer>
       <CustomerService />
       <Footer />
     </Container>
@@ -31,7 +35,7 @@ const Container = styled.div`
   text-align: center;
 `;
 
-const BodyContainer = styled(Container)`
+const MiniWidthContainer = styled(Container)`
   width: 85%;
   max-width: 1580px;
   display: flex;
