@@ -98,7 +98,7 @@ const ContentsBox = styled.div`
 
 const ContentImg = styled.img`
   max-width: 400px;
-  max-height: 480px;
+  height: 100%;
 `;
 
 const RightBox = styled.div`

@@ -68,6 +68,7 @@ const Container = styled.div`
   align-items: flex-start;
   justify-content: left;
   width: 100%;
+  margin-bottom: 5rem;
 `;
 
 const NewsWrapper = styled.div`

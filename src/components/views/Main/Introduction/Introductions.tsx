@@ -177,7 +177,6 @@ const Section2 = styled(Section1)`
 const Photo = styled.div`
   width: 100%;
   height: 255px;
-  background-color: gray;
   margin: 10px 0 30px 0;
 `;
 
