@@ -7,6 +7,7 @@ import Client from '@components/views/Main/Client/Client';
 import News from '@components/views/Main/News';
 import CustomerService from '@components/views/Main/CustomerService';
 import Footer from '@components/views/Main/Footer';
+import FloatingButton from '@components/common/Button/FloatingButton';
 
 const Main = () => {
   return (
@@ -23,6 +24,7 @@ const Main = () => {
       </MiniWidthContainer>
       <CustomerService />
       <Footer />
+      <FloatingButton />
     </Container>
   );
 };
