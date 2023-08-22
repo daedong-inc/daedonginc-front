@@ -77,7 +77,7 @@ const Section1 = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 5rem 0;
+  margin-top: 7rem;
   p {
     margin: 0;
   }
