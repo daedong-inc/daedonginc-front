@@ -110,8 +110,7 @@ const QnAContainer = styled.div`
 const QnAWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  /* border-right: 2px solid #bdbdbd; */
+  padding-left: 1.5rem;
 `;
 
 const LeftContainer = styled.div`
@@ -128,4 +127,5 @@ const StyledVerticalLine = styled.div`
   width: 2px;
   height: 100%;
   background-color: #ccc;
+  margin: auto;
 `;
