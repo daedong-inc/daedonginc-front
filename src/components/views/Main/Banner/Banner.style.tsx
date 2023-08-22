@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
 import { mediaQuery } from 'styles/mediaQuery';
-import { MakeNewTypographStyles, getNotoTypographyStyles } from 'styles/font/font';
+import {
+  MakeNewTypographStyles,
+  getNotoTypographyStyles,
+  getLatoTypographyStyles,
+} from 'styles/font/font';
 import theme from 'theme';
+import { ReactComponent as ArrowIcon } from '@assets/icons/arrow.svg';
 
 interface WrapperProps {
   img: string;
@@ -67,3 +72,54 @@ export const ScrollIcon = styled.img`
   margin-bottom: 20px;
 `;
 
+// swiper css
+
+export const CarouselBox = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+`;
+
+export const SwiperControlBox = styled.div`
+  position: absolute;
+  top: calc(60% + 100px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  z-index: 10;
+`;
+
+export const LeftButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  width: 24px;
+  height: 24px;
+`;
+
+export const RightButton = styled(LeftButton)`
+  transform: rotate(180deg);
+`;
+
+export const ArrowIconStyled = styled(ArrowIcon)`
+  width: 24px;
+  height: 24px;
+  color: white;
+`;
+
+export const PaginationBulletBox = styled.div`
+  min-width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 1.5rem;
+`;
+
+export const PaginationBullet = styled.span`
+  /* css에서 bullet style수정해야함 */
+`;
