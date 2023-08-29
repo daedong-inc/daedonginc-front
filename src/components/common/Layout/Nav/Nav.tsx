@@ -1,8 +1,11 @@
+import React, { useState, useEffect } from 'react';
 import * as S from './Nav.style';
 import Logo from '@components/common/Logo';
 import { useNavigate } from 'react-router-dom';
 import ROUTE from '@constants/route';
 import { ReactComponent as SearchIcon } from 'assets/icons/search.svg'; // 수정된 부분
+import SearchBar from '@components/common/SearchBar';
+import theme from 'theme';
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -21,7 +24,10 @@ const Nav = () => {
       </S.LeftContainer>
       <div>
         <S.SearchWrapper>
-          <SearchIcon width="20px" height="20px" />
+          <S.SearchBarContainer>
+            <S.SearchIcon />
+            <S.SearchInput type="text" placeholder="검색어를 입력하세요" />
+          </S.SearchBarContainer>
         </S.SearchWrapper>
       </div>
     </S.TopNavContainer>
