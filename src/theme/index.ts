@@ -69,7 +69,7 @@ const theme: Theme = {
   },
   media: {
     desktop_L: '@media (min-width: 1025px)',
-    desktop_S: '@media (min-width: 1024px) and (max-width: 361px)',
+    desktop_S: '@media (max-width: 1024px) and (min-width: 361px)',
     mobile: '@media (max-width: 360px) ',
   },
 };

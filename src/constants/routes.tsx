@@ -3,6 +3,7 @@ import ROUTE from './route';
 // pages
 import App from 'App';
 import Main from '@pages/Main';
+import Search from '@pages/Search';
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
       {
         path: ROUTE.MAIN,
         element: <Main />,
+      },
+      {
+        path: ROUTE.SEARCH,
+        element: <Search />,
       },
     ],
   },
