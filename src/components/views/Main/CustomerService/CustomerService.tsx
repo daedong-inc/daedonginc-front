@@ -31,15 +31,15 @@ const CustomerService = () => {
               <CommunicationIcon width="30px" height="30px" />
               <QnATitle>자주묻는질문</QnATitle>
             </LeftContainer>
-            <div>
-              {/* <div>
+            <DescWrapper>
+              <QnADescription>
                 자주 질문하시는 문의사항을 분야별로
                 <br /> 정리하여 보실 수 있습니다.
-              </div> */}
+              </QnADescription>
               <Button buttontype="text_icons" size="m" outlined>
                 더보기
               </Button>
-            </div>
+            </DescWrapper>
           </QnAWrapper>
           <StyledVerticalLine />
           <QnAWrapper>
@@ -47,15 +47,15 @@ const CustomerService = () => {
               <MailIcon width="30px" height="30px" />
               <QnATitle>문의하기</QnATitle>
             </LeftContainer>
-            <div>
-              {/* <div>
-              문의사항이나 견적에 대한 사항을 전달주시면
-              <br /> 검토 후 회신 드립니다.
-              </div> */}
+            <DescWrapper>
+              <QnADescription>
+                문의사항이나 견적에 대한 사항을 전달주시면
+                <br /> 검토 후 회신 드립니다.
+              </QnADescription>
               <Button buttontype="text_icons" size="m" outlined>
                 더보기
               </Button>
-            </div>
+            </DescWrapper>
           </QnAWrapper>
         </QnAContainer>
       </CustomerServiceContainer>
@@ -105,6 +105,7 @@ const QnAContainer = styled.div`
   grid-template-columns: 1fr 0.1fr 1fr;
   padding: 1.5rem;
   background-color: white;
+  max-width: 1260px;
 `;
 
 const QnAWrapper = styled.div`
@@ -120,7 +121,27 @@ const LeftContainer = styled.div`
 `;
 const QnATitle = styled.p`
   ${getNotoTypographyStyles('Body1_b')}
-  margin-left: 1rem;
+  margin: 1rem;
+
+  ${({ theme }) => theme.media.desktop_L} {
+    ${getNotoTypographyStyles('Heading3')}
+  }
+`;
+
+const DescWrapper = styled.div`
+  ${({ theme }) => theme.media.desktop_L} {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+`;
+
+const QnADescription = styled.div`
+  display: none;
+
+  ${({ theme }) => theme.media.desktop_L} {
+    display: block;
+    ${getNotoTypographyStyles('Body2_r')}
+  }
 `;
 
 const StyledVerticalLine = styled.div`

@@ -5,6 +5,7 @@ import {
 } from 'styles/font/font';
 import Button from '@components/common/Button/Button';
 import { ReactComponent as Logo } from 'assets/대동로고.svg';
+import theme from 'theme';
 
 const News = () => {
   const newsDatas = [
@@ -24,7 +25,15 @@ const News = () => {
       title: '대한민국 우수기업 2회연속 수상',
       date: '2023.02.02',
     },
+    {
+      id: 4,
+      title: '대한민국 우수기업 2회연속 수상',
+      date: '2023.02.02',
+    },
   ];
+
+  const isDeskTop_L = window.innerWidth >= theme.media.desktop_L;
+  const maxItems = isDeskTop_L ? 3 : 4;
 
   return (
     <Container>
@@ -39,7 +48,7 @@ const News = () => {
           </div>
         </TitleBox>
         <ContentBox>
-          {newsDatas.map((newsData) => (
+          {newsDatas.slice(0, maxItems).map((newsData) => (
             <NewsBox key={newsData.id}>
               <NewsTitleBox>
                 <Tap>News</Tap>
@@ -102,6 +111,12 @@ const ContentBox = styled.div`
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   width: 100%;
+
+  ${({ theme }) => theme.media.desktop_L} {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: none;
+    gap: 30px;
+  }
 `;
 
 const NewsBox = styled.div`
@@ -114,12 +129,22 @@ const NewsBox = styled.div`
   text-align: left;
   border-top: solid 2px;
   padding-top: 20px;
+
+  ${({ theme }) => theme.media.desktop_L} {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 514px;
+  }
 `;
 
 const NewsTitleBox = styled.div`
   display: grid;
   grid-template-rows: 1fr 2fr 1fr;
   width: 100%;
+
+  ${({ theme }) => theme.media.desktop_L} {
+    height: 40%;
+  }
 `;
 
 const NewsImageBox = styled.div`
@@ -129,6 +154,11 @@ const NewsImageBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${({ theme }) => theme.media.desktop_L} {
+    width: 100%;
+    height: 300px;
+  }
 `;
 
 const NewsImg = styled.img`

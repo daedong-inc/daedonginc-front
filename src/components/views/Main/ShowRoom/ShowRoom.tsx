@@ -73,6 +73,10 @@ const Container = styled.div`
   p {
     margin: 5px;
   }
+
+  ${({ theme }) => theme.media.desktop_L} {
+    height: 980px;
+  }
 `;
 
 const ShowRoomWrapper = styled.div``;
@@ -85,6 +89,10 @@ const ShowRoomTitleBox = styled.div`
 const Title = styled.p`
   ${getLatoTypographyStyles('Heading3_eb')};
   margin: 20px 0;
+
+  ${({ theme }) => theme.media.desktop_L} {
+    ${getLatoTypographyStyles('Heading2_b')}
+  }
 `;
 
 const Subtitle = styled.p`
@@ -94,11 +102,16 @@ const Subtitle = styled.p`
 const ContentsBox = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 5%;
 `;
 
 const ContentImg = styled.img`
   max-width: 400px;
   height: 100%;
+
+  ${({ theme }) => theme.media.desktop_L} {
+    max-width: 640px;
+  }
 `;
 
 const RightBox = styled.div`

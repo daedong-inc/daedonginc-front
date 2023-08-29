@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-
-import { mediaQuery } from 'styles/mediaQuery';
 import {
   MakeNewTypographStyles,
   getNotoTypographyStyles,
@@ -52,16 +50,23 @@ export const SwiperWrapper = styled.div<WrapperProps>`
 
 export const Title = styled.p`
   ${MakeNewTypographStyles('Lato', 700, 70, 60)}
+
+  ${({ theme }) => theme.media.desktop_L} {
+    ${MakeNewTypographStyles('Lato', 700, 90, 60)}
+  }
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getNotoTypographyStyles('Heading2')}
+  }
 `;
-// 위치 고민중
-// justify-content: flex-start;
-// margin-top: 20%;
-// margin-bottom: 3rem;
-//   word-break: keep-all;
 
 export const Description = styled.p`
   ${getNotoTypographyStyles('Body2_b')}
   margin-bottom: 30px;
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getNotoTypographyStyles('Body4_r')}
+  }
 `;
 
 export const ScrollIcon = styled.img`
@@ -70,6 +75,11 @@ export const ScrollIcon = styled.img`
   left: 50%;
   transform: translateX(-50%);
   margin-bottom: 20px;
+
+  ${({ theme }) => theme.media.mobile} {
+    width: 52px;
+    height: 47px;
+  }
 `;
 
 // swiper css
@@ -118,6 +128,11 @@ export const PaginationBulletBox = styled.div`
   justify-content: space-around;
   align-items: center;
   padding: 0 1.5rem;
+
+  ${({ theme }) => theme.media.mobile} {
+    max-width: 150px;
+    padding: 0 1rem;
+  }
 `;
 
 export const PaginationBullet = styled.span`

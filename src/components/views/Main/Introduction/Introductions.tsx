@@ -95,6 +95,10 @@ const TextArea = styled.div`
 
 const Title = styled.p`
   ${getLatoTypographyStyles('Heading3_eb')};
+
+  ${({ theme }) => theme.media.desktop_L} {
+    ${getLatoTypographyStyles('Heading2_b')}
+  }
 `;
 
 const GridPhotosContainer = styled.div`
@@ -114,6 +118,10 @@ const GridTitle = styled.div`
   color: white;
   padding: 10px;
   transition: bottom 0.3s ease;
+
+  ${({ theme }) => theme.media.desktop_L} {
+    ${getLatoTypographyStyles('Heading3')}
+  }
 `;
 
 const SvgImage = styled.img`
@@ -140,6 +148,10 @@ const GridDescription = styled.div`
   opacity: 0;
   // 여기 폰트 정해지면 수정
   ${getNotoTypographyStyles('Body2_b')}
+
+  ${({ theme }) => theme.media.desktop_L} {
+    ${getNotoTypographyStyles('Body2_b')}
+  }
 `;
 
 const GridItem = styled.div`
@@ -176,8 +188,12 @@ const Section2 = styled(Section1)`
 
 const Photo = styled.div`
   width: 100%;
-  height: 255px;
+  max-height: 255px;
   margin: 10px 0 30px 0;
+
+  ${({ theme }) => theme.media.desktop_L} {
+    max-height: 460px;
+  }
 `;
 
 const DiscContainer = styled.div`

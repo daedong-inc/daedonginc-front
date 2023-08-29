@@ -10,7 +10,6 @@ import {
 } from 'styles/font/font';
 import Button from '@components/common/Button/Button';
 import { ReactComponent as ArrowCircleIcon } from '@assets/icons/arrowCircle.svg';
-import theme from 'theme';
 
 export interface CarouselDataType {
   id: number;
@@ -24,7 +23,7 @@ const OurProduct = () => {
   const CarouselData: CarouselDataType[] = [
     {
       id: 1,
-      img: `https://picsum.photos/416/574?random=${Math.random()}`,
+      img: `https://picsum.photos/940/700?random=${Math.random()}`,
       name: 'Dual Cap Dropper Tube',
       description: (
         <>
@@ -40,7 +39,7 @@ const OurProduct = () => {
     },
     {
       id: 2,
-      img: `https://picsum.photos/416/574?random=${Math.random()}`,
+      img: `https://picsum.photos/940/700?random=${Math.random()}`,
       name: '222',
       description: (
         <>
@@ -119,6 +118,13 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 416px;
   align-items: center;
+  max-height: 574px;
+
+  ${({ theme }) => theme.media.desktop_L} {
+    grid-template-columns: 1fr 940px;
+    padding-right: 7.5vw;
+    max-height: 700px;
+  }
 `;
 
 const ProductDetailBox = styled.div`
@@ -145,6 +151,10 @@ const TitleBox = styled.div``;
 const Title = styled.p`
   ${getLatoTypographyStyles('Heading3_eb')};
   margin-block-end: 0;
+
+  ${({ theme }) => theme.media.desktop_L} {
+    ${getLatoTypographyStyles('Heading2_b')}
+  }
 `;
 
 const Title_KO = styled.p`
@@ -184,7 +194,6 @@ const LeftButton = styled.button`
   top: 45%;
   left: 10%;
   z-index: 10;
-  /* transform: translate(-50%, -50%); */
 `;
 
 const RightButton = styled(LeftButton)`
