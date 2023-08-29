@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { ReactComponent as ScrollTopIcon } from '@assets/icons/scrollTop.svg';
-import theme from 'theme';
 
 interface StyledButtonProps {
   isVisible: boolean;
