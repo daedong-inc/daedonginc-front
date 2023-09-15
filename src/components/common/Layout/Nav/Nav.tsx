@@ -16,13 +16,16 @@ const Nav = () => {
   if (location.pathname === '/' + ROUTE.SEARCH) {
     currentTheme = theme.navTheme.nav_darkTheme;
   }
+  // //모바일일 때 logo 크기 props 변경 방법 고민하기
+  // const isMobile = window.innerWidth <= 359;
+  // const logoWidth = isMobile ? 140 : 200;
+  // const logoHeight = isMobile ? 24 : 34;
 
-  console.log(currentTheme.logoColor);
   return (
     <S.TopNavContainer>
       <S.LeftContainer>
-        <S.LogoButton>
-          <Logo height={34} width={200} color={currentTheme.logoColor} />
+        <S.LogoButton onClick={() => navigate(ROUTE.MAIN)}>
+          <Logo width={200} height={34} color={currentTheme.logoColor} />
         </S.LogoButton>
         <S.NavMenu color={currentTheme.textColor}>
           <li onClick={() => navigate(ROUTE.HISTORY)}>기업정보</li>
@@ -44,6 +47,9 @@ const Nav = () => {
           </S.SearchBarContainer>
         </S.SearchWrapper>
       </div>
+      <S.HamburgerButtonContainer>
+        <S.HamburgerIcon color={currentTheme.logoColor} />
+      </S.HamburgerButtonContainer>
     </S.TopNavContainer>
   );
 };

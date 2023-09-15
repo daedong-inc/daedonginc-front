@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Z_INDEX } from 'styles/constants';
 import { getNotoTypographyStyles } from 'styles/font/font';
 import { ReactComponent as Icon } from 'assets/icons/search.svg';
+import { ReactComponent as hambergerIcon } from 'assets/icons/hamburger.svg';
 import theme from 'theme';
 
 interface NavMenuProps {
@@ -20,6 +21,10 @@ export const TopNavContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
   /* border-bottom: ${theme.colors.neutral700} 1px solid; */
+  height: 70px ${({ theme }) => theme.media.mobile} {
+    width: 90%;
+    height: 50px;
+  }
 `;
 
 export const LeftContainer = styled.div`
@@ -36,6 +41,11 @@ export const LogoButton = styled.button`
   display: flex;
   align-items: center;
   cursor: pointer;
+
+  ${({ theme }) => theme.media.mobile} {
+    width: 140px;
+    height: 24px;
+  }
 `;
 
 export const NavMenu = styled.ul<NavMenuProps>`
@@ -49,6 +59,10 @@ export const NavMenu = styled.ul<NavMenuProps>`
   li {
     color: ${(props) => props.color};
   }
+
+  ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
 `;
 
 // 검색
@@ -57,6 +71,10 @@ export const SearchWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
 `;
 
 export const SearchBarContainer = styled.div<NavMenuProps>`
@@ -99,5 +117,22 @@ export const SearchInput = styled.input<NavMenuProps>`
 
   ${({ theme }) => theme.media.desktop_S} {
     display: none;
+  }
+`;
+
+export const HamburgerButtonContainer = styled.button`
+  display: none;
+  background: none;
+  cursor: pointer;
+  border: none;
+
+  ${({ theme }) => theme.media.mobile} {
+    display: block;
+  }
+`;
+
+export const HamburgerIcon = styled(hambergerIcon)<NavMenuProps>`
+  path {
+    stroke: ${(props) => props.color};
   }
 `;

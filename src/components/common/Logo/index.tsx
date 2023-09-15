@@ -33,10 +33,17 @@ const StyledLogo = styled.div`
 const LogoWrapper = styled.div<LogoProps>`
   width: ${(props) => props.width}px;
   height: ${(props) => props.height}px;
+  display: flex;
+  align-items: center;
 `;
 
 const StyledLogoIcon = styled(LogoIcon)<LogoProps>`
   path:not(:nth-child(12)) {
     fill: ${(props) => props.color};
+  }
+
+  ${({ theme }) => theme.media.mobile} {
+    width: 140px;
+    height: 24px;
   }
 `;
