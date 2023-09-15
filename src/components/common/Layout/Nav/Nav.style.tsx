@@ -1,19 +1,25 @@
 import styled from 'styled-components';
 import { Z_INDEX } from 'styles/constants';
 import { getNotoTypographyStyles } from 'styles/font/font';
-import theme from 'theme';
 import { ReactComponent as Icon } from 'assets/icons/search.svg';
+import theme from 'theme';
+
+interface NavMenuProps {
+  color: string;
+  placeholderColor?: string;
+}
 
 export const TopNavContainer = styled.div`
   position: fixed;
   margin: 0 auto;
   z-index: ${Z_INDEX.navBar};
   width: 75%;
-  height: 80px;
+  height: 74px;
   background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  /* border-bottom: ${theme.colors.neutral700} 1px solid; */
 `;
 
 export const LeftContainer = styled.div`
@@ -32,7 +38,7 @@ export const LogoButton = styled.button`
   cursor: pointer;
 `;
 
-export const NavMenu = styled.ul`
+export const NavMenu = styled.ul<NavMenuProps>`
   width: 395px;
   display: flex;
   align-items: center;
@@ -40,7 +46,9 @@ export const NavMenu = styled.ul`
   justify-content: space-between;
   ${getNotoTypographyStyles('Body2_r')};
   cursor: pointer;
-  color: ${theme.colors.white};
+  li {
+    color: ${(props) => props.color};
+  }
 `;
 
 // 검색
@@ -51,10 +59,10 @@ export const SearchWrapper = styled.div`
   align-items: center;
 `;
 
-export const SearchBarContainer = styled.div`
+export const SearchBarContainer = styled.div<NavMenuProps>`
   display: flex;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: ${(props) => props.color};
   border-radius: 100px;
   padding: 0px 16px;
   width: 220px;
@@ -68,12 +76,15 @@ export const SearchBarContainer = styled.div`
   }
 `;
 
-export const SearchIcon = styled(Icon)`
+export const SearchIcon = styled(Icon)<NavMenuProps>`
   font-size: 15px;
+  path {
+    stroke: ${(props) => props.color};
+  }
   cursor: pointer;
 `;
 
-export const SearchInput = styled.input`
+export const SearchInput = styled.input<NavMenuProps>`
   flex: 1;
   border: none;
   outline: none;
@@ -81,9 +92,9 @@ export const SearchInput = styled.input`
   font-size: 14px;
   background-color: transparent;
   ${getNotoTypographyStyles('Body3_r')}
-  color: white;
+  color: ${(props) => props.color};
   &::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: ${(props) => props.placeholderColor};
   }
 
   ${({ theme }) => theme.media.desktop_S} {
