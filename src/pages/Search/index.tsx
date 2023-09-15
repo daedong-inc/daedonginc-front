@@ -151,7 +151,7 @@ export default Search;
 const Container = styled.div`
   width: 100%;
   min-height: 870px;
-  padding-top: 80px;
+  padding-top: 150px;
   margin: 0 auto;
   text-align: center;
 `;
