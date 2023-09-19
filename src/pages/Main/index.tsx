@@ -42,4 +42,8 @@ const MiniWidthContainer = styled(Container)`
   max-width: 1580px;
   display: flex;
   flex-direction: column;
+
+  ${({ theme }) => theme.media.mobile} {
+    width: 90%;
+  }
 `;
