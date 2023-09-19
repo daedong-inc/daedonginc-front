@@ -51,8 +51,8 @@ const theme: Theme = {
   colors,
   media: {
     desktop_L: '@media (min-width: 1025px)',
-    desktop_S: '@media (max-width: 1024px) and (min-width: 361px)',
-    mobile: '@media (max-width: 360px) ',
+    desktop_S: '@media (max-width: 1024px) and (min-width: 480px)',
+    mobile: '@media (max-width: 479px) and (min-width: 320px)',
   },
   navTheme: {
     nav_darkTheme,
