@@ -3,8 +3,37 @@ import {
   getLatoTypographyStyles,
 } from 'styles/font/font';
 import styled from 'styled-components';
+import MotosSwiper_MobileVer from './MotosSwiper_MobileVer';
+
+export interface CompanyMoto {
+  id: number;
+  title: string;
+  img: string;
+  description: string;
+}
 
 const Introduction = () => {
+  const companyMotos: CompanyMoto[] = [
+    {
+      id: 1,
+      title: 'Qulity',
+      img: 'src/assets/Main/Grid1.svg',
+      description: '품질 환경 보증체계 및 엄격한 사후관리',
+    },
+    {
+      id: 2,
+      title: 'Honesty',
+      img: 'src/assets/Main/Grid2.svg',
+      description: '미정',
+    },
+    {
+      id: 3,
+      title: 'Sincere',
+      img: 'src/assets/Main/Grid3.svg',
+      description: '미정',
+    },
+  ];
+
   return (
     <Container>
       <Section1>
@@ -20,26 +49,17 @@ const Introduction = () => {
             </Desc>
           </div>
         </TextArea>
-        <GridPhotosContainer>
-          <GridItem>
-            <SvgImage src="src\assets\Main\Grid1.svg" alt="" />
-            <GridTitle>Qulity</GridTitle>
-            <CenteredLine />
-            <GridDescription>
-              품질 환경 보증체계 및 <br /> 엄격한 사후관리
-            </GridDescription>
-          </GridItem>
-          <GridItem>
-            <SvgImage src="src\assets\Main\Grid2.svg" alt="" />
-            <GridTitle>Honesty</GridTitle>
-            <CenteredLine />
-          </GridItem>
-          <GridItem>
-            <SvgImage src="src\assets\Main\Grid3.svg" alt="" />
-            <GridTitle>Sincere</GridTitle>
-            <CenteredLine />
-          </GridItem>
-        </GridPhotosContainer>
+        <MotosGridContainer>
+          {companyMotos.map((moto) => (
+            <GridItem key={moto.id}>
+              <SvgImage src={moto.img} alt="회사모토" />
+              <GridTitle>{moto.title}</GridTitle>
+              <CenteredLine />
+              <GridDescription>{moto.description}</GridDescription>
+            </GridItem>
+          ))}
+        </MotosGridContainer>
+        <MotosSwiper_MobileVer companyMotos={companyMotos} />
       </Section1>
       <Section2>
         <Title2>
@@ -56,7 +76,7 @@ const Introduction = () => {
           </Desc>
         </DiscContainer>
         <Photo>
-          <SvgImage src="src\assets\Main\4.svg" />
+          <Section2Img src="src\assets\Main\4.svg" />
         </Photo>
       </Section2>
     </Container>
@@ -81,6 +101,10 @@ const Section1 = styled.div`
   p {
     margin: 0;
   }
+
+  ${({ theme }) => theme.media.mobile} {
+    margin-top: 5rem;
+  }
 `;
 
 const TextArea = styled.div`
@@ -89,7 +113,12 @@ const TextArea = styled.div`
   flex-direction: column;
 
   div {
+    /* margin-bottom: 30px; */
     flex: 1;
+  }
+
+  ${({ theme }) => theme.media.mobile} {
+    height: 115px;
   }
 `;
 
@@ -99,14 +128,22 @@ const Title = styled.p`
   ${({ theme }) => theme.media.desktop_L} {
     ${getLatoTypographyStyles('Heading2_b')}
   }
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getLatoTypographyStyles('Body1_eb')}
+  }
 `;
 
-const GridPhotosContainer = styled.div`
+const MotosGridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   align-items: center;
   margin-top: 3rem;
+
+  ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
 `;
 
 const GridTitle = styled.div`
@@ -194,21 +231,50 @@ const Photo = styled.div`
   ${({ theme }) => theme.media.desktop_L} {
     max-height: 460px;
   }
+
+  ${({ theme }) => theme.media.mobile} {
+    width: 100vw;
+    height: 170px;
+    align-self: center;
+  }
+`;
+
+const Section2Img = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const DiscContainer = styled.div`
   margin: 1.5rem 0;
+
+  ${({ theme }) => theme.media.mobile} {
+    margin: 0.5rem 0;
+  }
 `;
 
 //font
 const Desc_b = styled.p`
   ${getNotoTypographyStyles('Body1_b')};
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getNotoTypographyStyles('Body3_b')}
+    margin-bottom: 5px;
+  }
 `;
 
 const Desc = styled.p`
   ${getNotoTypographyStyles('Body2_r')};
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getNotoTypographyStyles('Body4_r')}
+  }
 `;
 
 const Title2 = styled.p`
   ${getNotoTypographyStyles('Heading2')}
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getNotoTypographyStyles('Body2_b')}
+  }
 `;
