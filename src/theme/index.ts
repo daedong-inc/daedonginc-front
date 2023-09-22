@@ -1,3 +1,5 @@
+import { BREAKPOINT_MEDIAQUERY } from 'styles/constants';
+
 export const colors = {
   white: '#FFFFFF',
   black: '#000000',
@@ -47,12 +49,27 @@ export const nav_darkTheme = {
   searchPlaceholderColor: colors.gray25,
 };
 
+// type MediaQuery = {
+//   [key in keyof typeof BREAKPOINT_MEDIAQUERY]: string;
+// };
+
+// export const media: MediaQuery = Object.keys(BREAKPOINT_MEDIAQUERY).reduce(
+//   (acc, key) => {
+//     const label = key as keyof typeof BREAKPOINT_MEDIAQUERY;
+//     acc[label] = `@media (min-width: ${BREAKPOINT_MEDIAQUERY[label]}px)`;
+//     return acc;
+//   },
+//   {} as MediaQuery,
+// );
+
 const theme: Theme = {
   colors,
   media: {
-    desktop_L: '@media (min-width: 1025px)',
-    desktop_S: '@media (max-width: 1024px) and (min-width: 480px)',
-    mobile: '@media (max-width: 479px) and (min-width: 320px)',
+    desktop_L: `@media (min-width: ${BREAKPOINT_MEDIAQUERY.desktop_L}px)`,
+    tablet: `@media (max-width: ${BREAKPOINT_MEDIAQUERY.desktop_L - 1}px) 
+                and (min-width: ${BREAKPOINT_MEDIAQUERY.tablet}px)`,
+    mobile: `@media (max-width: ${BREAKPOINT_MEDIAQUERY.tablet - 1}px) 
+                and (min-width: ${BREAKPOINT_MEDIAQUERY.mobile}px)`,
   },
   navTheme: {
     nav_darkTheme,
@@ -106,7 +123,7 @@ export interface Theme {
   colors: Colors;
   media: {
     desktop_L: string;
-    desktop_S: string;
+    tablet: string;
     mobile: string;
   };
   navTheme: {
