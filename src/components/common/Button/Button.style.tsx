@@ -9,6 +9,7 @@ export const Container = styled.button<{
   size: ButtonSize;
   state: ButtonState;
   buttontype: ButtonType;
+  margin: string;
 }>`
   all: unset;
   display: flex;
@@ -16,6 +17,7 @@ export const Container = styled.button<{
   align-items: center;
   border-radius: 50px;
   cursor: pointer;
+  margin: ${({ margin }) => margin};
 
   ${({ size, buttontype }) => typeMap[buttontype][size]}
   ${({ outlined, state }) =>

@@ -14,6 +14,7 @@ export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   state?: ButtonState;
   buttontype?: ButtonType;
+  margin?: string;
 }
 
 const Button = forwardRef<HTMLButtonElement, Props>(function Button(
@@ -24,6 +25,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(function Button(
     size = 's',
     state = 'enabled',
     buttontype = 'text',
+    margin = '0px',
     onClick,
     ...rest
   }: Props,
@@ -51,6 +53,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(function Button(
       size={size}
       state={state}
       buttontype={buttontype}
+      margin={margin}
       ref={ref}
       {...rest}
     >
