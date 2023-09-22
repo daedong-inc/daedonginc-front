@@ -86,7 +86,7 @@ export const SearchBarContainer = styled.div<NavMenuProps>`
   width: 220px;
   height: 34px;
 
-  ${({ theme }) => theme.media.desktop_S} {
+  ${({ theme }) => theme.media.tablet} {
     background: none;
     border: none;
     width: 20px;
@@ -115,7 +115,7 @@ export const SearchInput = styled.input<NavMenuProps>`
     color: ${(props) => props.placeholderColor};
   }
 
-  ${({ theme }) => theme.media.desktop_S} {
+  ${({ theme }) => theme.media.tablet} {
     display: none;
   }
 `;
