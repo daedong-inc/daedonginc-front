@@ -4,6 +4,7 @@ import {
   getLatoTypographyStyles,
 } from 'styles/font/font';
 import Button from '@components/common/Button/Button';
+import { BREAKPOINT_MEDIAQUERY } from 'styles/constants';
 
 interface ClientLogo {
   img: string;
@@ -16,12 +17,20 @@ interface ClientLogos {
 const Client = () => {
   const clientLogos: ClientLogos = {};
 
-  for (let i = 1; i <= 10; i++) {
+  for (let i = 1; i <= 11; i++) {
     const companyName = `company${i}`;
     clientLogos[companyName] = {
       img: `src/assets/clientLogoSample.jpg`,
     };
   }
+
+  // 반응형으로 로고 10개 9개 동작하게 다시 생각해보기
+  // const isMobile = window.matchMedia(
+  //   `(max-width: ${BREAKPOINT_MEDIAQUERY.tablet - 1}px) and (min-width: ${
+  //     BREAKPOINT_MEDIAQUERY.mobile
+  //   }px)`,
+  // );
+  // const logoCount = isMobile.matches ? 9 : 10;
 
   return (
     <Container>
@@ -44,7 +53,7 @@ const Client = () => {
             </LogoWrapper>
           ))}
         </LogoBox>
-        <Button outlined size="m" buttontype="text_icons">
+        <Button outlined size="m" buttontype="text_icons" margin={'50px 0 0 0'}>
           더보기
         </Button>
       </ClientWrapper>
@@ -56,11 +65,15 @@ export default Client;
 
 const Container = styled.div`
   width: 100%;
-  height: 560px;
-  margin: 20px 0;
+  height: auto;
+  margin: 5rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  ${({ theme }) => theme.media.mobile} {
+    margin: 30px 0;
+  }
 `;
 
 const ClientWrapper = styled.div`
@@ -77,10 +90,18 @@ const TitleBox = styled.div`
   width: auto;
   height: 147px;
   margin: 10px;
+
+  ${({ theme }) => theme.media.mobile} {
+    height: 104px;
+  }
 `;
 
 const Title = styled.span`
   ${getLatoTypographyStyles('Heading3_eb')}
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getLatoTypographyStyles('Body1_eb')};
+  }
 `;
 
 const Subtitle = styled.div`
@@ -90,10 +111,18 @@ const Subtitle = styled.div`
 
 const Text_L = styled.span`
   ${getNotoTypographyStyles('Body1_b')}
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getNotoTypographyStyles('Body3_b')};
+  }
 `;
 
 const Text_S = styled.span`
   ${getNotoTypographyStyles('Body2_r')}
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getNotoTypographyStyles('Body4_r')};
+  }
 `;
 
 const LogoBox = styled.div`
@@ -104,6 +133,20 @@ const LogoBox = styled.div`
   width: 100%;
   height: auto;
   padding: 40px 0;
+  :nth-child(n + 11) {
+    display: none;
+  }
+
+  ${({ theme }) => theme.media.mobile} {
+    grid-template-rows: repeat(3, calc(120px / 3));
+    grid-template-columns: repeat(3, 1fr);
+    min-width: 328px;
+    padding: 0;
+    gap: 10px;
+    :nth-child(n + 10) {
+      display: none;
+    }
+  }
 `;
 
 const LogoWrapper = styled.div`
@@ -111,7 +154,13 @@ const LogoWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
 const Logo = styled.img`
   width: auto;
   height: 80%;
+
+  ${({ theme }) => theme.media.mobile} {
+    height: 70%;
+    width: auto;
+  }
 `;
