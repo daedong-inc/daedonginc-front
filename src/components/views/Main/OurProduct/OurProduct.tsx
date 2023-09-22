@@ -10,6 +10,7 @@ import {
 } from 'styles/font/font';
 import Button from '@components/common/Button/Button';
 import { ReactComponent as ArrowCircleIcon } from '@assets/icons/arrowCircle.svg';
+import SwiperMobile from './SwiperMobile';
 
 export interface CarouselDataType {
   id: number;
@@ -51,6 +52,20 @@ const OurProduct = () => {
         </>
       ),
     },
+    {
+      id: 3,
+      img: `https://picsum.photos/940/700?random=${Math.random()}`,
+      name: '3',
+      description: (
+        <>
+          미먀미먀
+          <br />
+          미먀묭
+          <br />
+          먀먀먕?
+        </>
+      ),
+    },
   ];
 
   return (
@@ -63,15 +78,18 @@ const OurProduct = () => {
               <Title_KO>제품 소개</Title_KO>
             </TitleBox>
             <Line />
+            {/* 모바일 */}
+            <SwiperMobile CarouselData={CarouselData} />
+            {/*  */}
             <DescriptionBox>
               <ProductName>
                 {CarouselData[activeCarouselIndex].name}
               </ProductName>
               <Detail>{CarouselData[activeCarouselIndex].description}</Detail>
             </DescriptionBox>
-            <Button outlined buttontype="text_icons" size="m">
+            <ShowMoreButton outlined buttontype="text_icons" size="m">
               더보기
-            </Button>
+            </ShowMoreButton>
           </ProductDetailWrapper>
         </ProductDetailBox>
         <CarouselBox>
@@ -80,8 +98,8 @@ const OurProduct = () => {
             spaceBetween={0}
             slidesPerView={1}
             navigation={{
-              prevEl: '.left-button',
-              nextEl: '.right-button',
+              prevEl: '.left-button-ourproduct',
+              nextEl: '.right-button-ourproduct',
             }}
             onSlideChange={(swiper) => {
               console.log(swiper);
@@ -95,10 +113,10 @@ const OurProduct = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <LeftButton className="left-button">
+          <LeftButton className="left-button-ourproduct">
             <ArrowCircleIconStyled />
           </LeftButton>
-          <RightButton className="right-button">
+          <RightButton className="right-button-ourproduct">
             <ArrowCircleIconStyled />
           </RightButton>
         </CarouselBox>
@@ -112,6 +130,10 @@ const Container = styled.div`
   width: 100%;
   /* height: 574px; */
   margin: 30px 0;
+
+  ${({ theme }) => theme.media.mobile} {
+    height: 593px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -125,6 +147,11 @@ const Wrapper = styled.div`
     padding-right: 7.5vw;
     max-height: 700px;
   }
+
+  ${({ theme }) => theme.media.mobile} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const ProductDetailBox = styled.div`
@@ -134,16 +161,35 @@ const ProductDetailBox = styled.div`
   text-align: left;
   background-color: #f8f8f8;
   height: 100%;
+
+  ${({ theme }) => theme.media.mobile} {
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+  }
 `;
 
 const ProductDetailWrapper = styled.div`
   height: 100%;
   margin-left: calc((15vw) / 2);
+  min-height: 600px;
+
+  ${({ theme }) => theme.media.mobile} {
+    margin-left: 0;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Line = styled.div`
   width: 30px;
   border-bottom: solid 4px #000000;
+
+  ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
 `;
 
 const TitleBox = styled.div``;
@@ -155,32 +201,58 @@ const Title = styled.p`
   ${({ theme }) => theme.media.desktop_L} {
     ${getLatoTypographyStyles('Heading2_b')}
   }
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getLatoTypographyStyles('Body1_eb')}
+  }
 `;
 
 const Title_KO = styled.p`
   ${getNotoTypographyStyles('Body1_b')};
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getNotoTypographyStyles('Body3_b')}
+  }
 `;
 
 const DescriptionBox = styled.div`
   padding-bottom: 30px;
   min-height: 40%;
+
+  ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
 `;
 
 const ProductName = styled(Title_KO)``;
 
 const Detail = styled.p`
   ${getNotoTypographyStyles('Body2_r')};
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getNotoTypographyStyles('Body4_r')}
+  }
 `;
 
 const CarouselBox = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
+
+  ${({ theme }) => theme.media.mobile} {
+    /* height: 170px; */
+
+    display: none;
+  }
 `;
 
 const ProductImg = styled.img`
   width: 100%;
   height: 100%;
+`;
+
+const ShowMoreButton = styled(Button)`
+  margin: 30px 0;
 `;
 
 const LeftButton = styled.button`
