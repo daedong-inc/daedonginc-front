@@ -23,6 +23,10 @@ export const TopNavContainer = styled.div<NavMenuProps>`
   background-color: ${(props) => props.color};
   transition: background-color 0.5s ease;
   border-bottom: ${(props) => props.border};
+
+  ${({ theme }) => theme.media.mobile} {
+    height: 50px;
+  }
 `;
 
 export const TopNavWrapper = styled.div`

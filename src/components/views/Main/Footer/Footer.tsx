@@ -26,6 +26,10 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   text-align: left;
+
+  ${({ theme }) => theme.media.mobile} {
+    height: 200px;
+  }
 `;
 
 const FooterWrapper = styled.div`
@@ -36,6 +40,7 @@ const FooterWrapper = styled.div`
 `;
 
 const BlackDaedongLogo = styled(Logo)`
+  width: 140px;
   path:not(:nth-child(12)) {
     fill: black;
   }
@@ -43,4 +48,8 @@ const BlackDaedongLogo = styled(Logo)`
 
 const Location = styled.p`
   ${getNotoTypographyStyles('Body2_r')}
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getNotoTypographyStyles('Body4_r')}
+  }
 `;
