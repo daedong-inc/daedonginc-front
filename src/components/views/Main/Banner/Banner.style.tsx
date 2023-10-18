@@ -6,6 +6,7 @@ import {
 } from 'styles/font/font';
 import theme from 'theme';
 import { ReactComponent as ArrowIcon } from '@assets/icons/arrow.svg';
+import { ReactComponent as scrollIcon } from 'assets/icons/scrollIcon.svg';
 
 interface WrapperProps {
   img: string;
@@ -70,7 +71,7 @@ export const Description = styled.p`
   }
 `;
 
-export const ScrollIcon = styled.img`
+export const ScrollIcon = styled(scrollIcon)`
   position: absolute;
   bottom: 0;
   left: 50%;

@@ -70,7 +70,7 @@ const Banner = () => {
               <S.SwiperWrapper img={carouselItem.img}>
                 <S.Title>{carouselItem.title}</S.Title>
                 <S.Description>{carouselItem.description}</S.Description>
-                <S.ScrollIcon src="src/assets/icons/scroll.svg" />
+                <S.ScrollIcon />
               </S.SwiperWrapper>
             </SwiperSlide>
           ))}
