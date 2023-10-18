@@ -27,12 +27,13 @@ export const SwiperWrapper = styled.div<WrapperProps>`
   text-align: center;
   justify-content: center;
   color: ${theme.colors.white};
-  background-image: url(${(props) => props.img});
   background-size: 100%;
   /* 이미지 비율 유지하며 배경에 꽉 차도록 설정 */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(${(props) => props.img});
 `;
 // transform: translateX(-50%);
 

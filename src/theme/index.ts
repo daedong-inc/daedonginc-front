@@ -32,6 +32,7 @@ export const colors = {
 };
 
 export const nav_lightTheme = {
+  backgroundColor: 'transparent',
   textColor: 'white',
   logoColor: 'white',
   searchIconColor: 'white',
@@ -41,6 +42,8 @@ export const nav_lightTheme = {
 };
 
 export const nav_darkTheme = {
+  backgroundColor: 'white',
+  border: colors.neutral700 + ' 1px solid',
   textColor: colors.gray800,
   logoColor: 'black',
   searchIconColor: colors.gray600,
@@ -48,19 +51,6 @@ export const nav_darkTheme = {
   searchFontColor: colors.gray800,
   searchPlaceholderColor: colors.gray25,
 };
-
-// type MediaQuery = {
-//   [key in keyof typeof BREAKPOINT_MEDIAQUERY]: string;
-// };
-
-// export const media: MediaQuery = Object.keys(BREAKPOINT_MEDIAQUERY).reduce(
-//   (acc, key) => {
-//     const label = key as keyof typeof BREAKPOINT_MEDIAQUERY;
-//     acc[label] = `@media (min-width: ${BREAKPOINT_MEDIAQUERY[label]}px)`;
-//     return acc;
-//   },
-//   {} as MediaQuery,
-// );
 
 const theme: Theme = {
   colors,
@@ -80,6 +70,8 @@ const theme: Theme = {
 export default theme;
 
 export interface NavTheme {
+  backgroundColor: string;
+  border?: string;
   textColor: string;
   logoColor: string;
   searchIconColor: string;
