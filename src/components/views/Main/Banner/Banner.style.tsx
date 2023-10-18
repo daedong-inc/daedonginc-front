@@ -6,7 +6,7 @@ import {
 } from 'styles/font/font';
 import theme from 'theme';
 import { ReactComponent as ArrowIcon } from '@assets/icons/arrow.svg';
-import { ReactComponent as scrollIcon } from 'assets/icons/scrollIcon.svg';
+import { ReactComponent as scrollIcon } from '@assets/icons/scroll.svg';
 
 interface WrapperProps {
   img: string;
