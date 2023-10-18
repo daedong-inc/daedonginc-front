@@ -122,7 +122,7 @@ const Search = () => {
                       {newsData.img ? (
                         <NewsImg src={newsData.img} alt="news image" />
                       ) : (
-                        <NoImg src={'src/assets/대동로고.svg'} />
+                        <NoImg />
                       )}
                     </NewsImageBox>
                     <NewsTitleBox>

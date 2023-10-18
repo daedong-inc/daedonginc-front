@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import * as S from './Nav.style';
 import Logo from '@components/common/Logo';
 import { useNavigate, useLocation } from 'react-router-dom';
 import ROUTE from '@constants/route';
-import { ReactComponent as SearchIcon } from 'assets/icons/search.svg'; // 수정된 부분
-import SearchBar from '@components/common/SearchBar';
 import theme from 'theme';
 
 const Nav = () => {
