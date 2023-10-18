@@ -8,20 +8,33 @@ import theme from 'theme';
 interface NavMenuProps {
   color: string;
   placeholderColor?: string;
+  border?: string;
 }
 
-export const TopNavContainer = styled.div`
+export const TopNavContainer = styled.div<NavMenuProps>`
   position: fixed;
   margin: 0 auto;
   z-index: ${Z_INDEX.navBar};
-  width: 75%;
-  height: 74px;
-  background-color: transparent;
+  width: 100%;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* border-bottom: ${theme.colors.neutral700} 1px solid; */
-  height: 70px ${({ theme }) => theme.media.mobile} {
+  background-color: ${(props) => props.color};
+  transition: background-color 0.5s ease;
+  border-bottom: ${(props) => props.border};
+`;
+
+export const TopNavWrapper = styled.div`
+  margin: 0 auto;
+  z-index: ${Z_INDEX.navBar};
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 70px;
+
+  ${({ theme }) => theme.media.mobile} {
     width: 90%;
     height: 50px;
   }
@@ -77,7 +90,7 @@ export const SearchWrapper = styled.div`
   }
 `;
 
-export const SearchBarContainer = styled.div<NavMenuProps>`
+export const SearchBarContainer = styled.form<NavMenuProps>`
   display: flex;
   align-items: center;
   background-color: ${(props) => props.color};
@@ -93,6 +106,8 @@ export const SearchBarContainer = styled.div<NavMenuProps>`
     margin-left: 20px;
   }
 `;
+
+export const SearchForm = styled.form``;
 
 export const SearchIcon = styled(Icon)<NavMenuProps>`
   font-size: 15px;
