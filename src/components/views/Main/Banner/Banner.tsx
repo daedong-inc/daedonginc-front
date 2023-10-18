@@ -17,7 +17,7 @@ export interface CarouselDataType {
 const Banner = () => {
   const CarouselData: CarouselDataType[] = [
     {
-      img: 'src/assets/Main/banner1.jpg',
+      img: '/assets/Main/banner1.jpg',
       title: 'COSMETIC',
       description: (
         <>

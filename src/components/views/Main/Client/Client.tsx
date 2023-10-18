@@ -20,7 +20,7 @@ const Client = () => {
   for (let i = 1; i <= 11; i++) {
     const companyName = `company${i}`;
     clientLogos[companyName] = {
-      img: `src/assets/clientLogoSample.jpg`,
+      img: `/assets/clientLogoSample.jpg`,
     };
   }
 

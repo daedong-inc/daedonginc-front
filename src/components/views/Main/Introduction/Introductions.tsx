@@ -17,19 +17,19 @@ const Introduction = () => {
     {
       id: 1,
       title: 'Qulity',
-      img: 'src/assets/Main/Grid1.svg',
+      img: '/assets/Main/Grid1.svg',
       description: '품질 환경 보증체계 및 엄격한 사후관리',
     },
     {
       id: 2,
       title: 'Honesty',
-      img: 'src/assets/Main/Grid2.svg',
+      img: '/assets/Main/Grid2.svg',
       description: '미정',
     },
     {
       id: 3,
       title: 'Sincere',
-      img: 'src/assets/Main/Grid3.svg',
+      img: '/assets/Main/Grid3.svg',
       description: '미정',
     },
   ];
@@ -76,7 +76,7 @@ const Introduction = () => {
           </Desc>
         </DiscContainer>
         <Photo>
-          <Section2Img src="src\assets\Main\4.svg" />
+          <Section2Img src="\assets\Main\4.svg" />
         </Photo>
       </Section2>
     </Container>

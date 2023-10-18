@@ -14,7 +14,7 @@ export interface CarouselDataType {
 
 const ShowRoom = () => {
   const CarouselData: CarouselDataType = {
-    img: 'src/assets/Main/Rectangle 66.png',
+    img: '/assets/Main/Rectangle 66.png',
     title: 'HAIR & BODY',
     description: (
       <>

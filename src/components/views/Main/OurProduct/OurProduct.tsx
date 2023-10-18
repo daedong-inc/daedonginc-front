@@ -25,7 +25,7 @@ const OurProduct = () => {
   const CarouselData: CarouselDataType[] = [
     {
       id: 1,
-      img: 'src/assets/Main/Rectangle 64.png',
+      img: '/assets/Main/Rectangle 64.png',
       name: 'Dual Cap Dropper Tube',
       description: (
         <>
