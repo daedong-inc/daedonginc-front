@@ -70,11 +70,15 @@ const OurProduct = () => {
   ];
 
   useEffect(() => {
-    const prevButton = document.querySelector('.left-button-ourproduct');
-    if (isFirstSlide) {
-      prevButton.style.display = 'none';
-    } else {
-      prevButton.style.display = 'block';
+    const prevButton = document.querySelector(
+      '.left-button-ourproduct',
+    ) as HTMLElement;
+    if (prevButton) {
+      if (isFirstSlide) {
+        prevButton.style.display = 'none';
+      } else {
+        prevButton.style.display = 'block';
+      }
     }
   }, [isFirstSlide]);
 
@@ -120,12 +124,14 @@ const OurProduct = () => {
               const isLastSlide = swiper.isEnd;
               const nextButton = document.querySelector(
                 '.right-button-ourproduct',
-              );
+              ) as HTMLElement;
 
-              if (isLastSlide) {
-                nextButton.style.display = 'none';
-              } else {
-                nextButton.style.display = 'block';
+              if (nextButton) {
+                if (isLastSlide) {
+                  nextButton.style.display = 'none';
+                } else {
+                  nextButton.style.display = 'block';
+                }
               }
 
               setIsFirstSlide(swiper.isBeginning);

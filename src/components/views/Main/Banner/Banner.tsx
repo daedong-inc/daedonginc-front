@@ -30,17 +30,17 @@ const Banner = () => {
     {
       img: `https://picsum.photos/1440/980?random=${Math.random()}`,
       title: '2',
-      description: 'fsdcsdfasdfasdf.',
+      description: <>정말로 뛰어납니다.</>,
     },
     {
       img: `https://picsum.photos/1440/980?random=${Math.random()}`,
       title: '3',
-      description: 'fsdcsdfasdfasdf.',
+      description: <>정말일까요?</>,
     },
     {
       img: `https://picsum.photos/1440/980?random=${Math.random()}`,
       title: '4',
-      description: 'fsdcsdfasdfasdf.',
+      description: <>정말입니다.</>,
     },
   ];
 
