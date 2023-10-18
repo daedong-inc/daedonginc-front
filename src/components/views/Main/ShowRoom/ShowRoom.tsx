@@ -14,7 +14,7 @@ export interface CarouselDataType {
 
 const ShowRoom = () => {
   const CarouselData: CarouselDataType = {
-    img: `https://picsum.photos/640/680?random=${Math.random()}`,
+    img: 'src/assets/Main/Rectangle 66.png',
     title: 'HAIR & BODY',
     description: (
       <>
