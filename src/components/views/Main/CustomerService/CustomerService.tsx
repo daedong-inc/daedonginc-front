@@ -58,6 +58,16 @@ const CustomerService = () => {
             </DescWrapper>
           </QnAWrapper>
         </QnAContainer>
+        <QnAContainer_mobile>
+          <LeftContainer>
+            <CommunicationIcon_mobile width="24px" height="24px" />
+            <QnATitle>자주묻는질문</QnATitle>
+          </LeftContainer>
+          <LeftContainer>
+            <MailIcon_mobile width="24px" height="24px" />
+            <QnATitle>문의하기</QnATitle>
+          </LeftContainer>
+        </QnAContainer_mobile>
       </CustomerServiceContainer>
     </Container>
   );
@@ -72,12 +82,21 @@ const Container = styled.div`
   align-items: center;
   text-align: left;
   background-color: black;
+
+  ${({ theme }) => theme.media.mobile} {
+    height: 233px;
+  }
 `;
 
 const CustomerServiceContainer = styled.div`
   width: 85%;
   display: grid;
   grid-template-columns: 280px auto;
+
+  ${({ theme }) => theme.media.mobile} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const CompanyInformation = styled.div`
@@ -89,14 +108,26 @@ const CompanyInformation = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   margin: 0 2rem 0 0;
+
+  ${({ theme }) => theme.media.mobile} {
+    height: 136px;
+  }
 `;
 
 const NumberContainer = styled.div`
   ${getNotoTypographyStyles('Heading2')}
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getNotoTypographyStyles('Body1_b')}
+  }
 `;
 
 const HourContainer = styled.div`
   ${getNotoTypographyStyles('Body2_r')}
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getNotoTypographyStyles('Body3_r')}
+  }
 `;
 
 const QnAContainer = styled.div`
@@ -106,6 +137,10 @@ const QnAContainer = styled.div`
   padding: 1.5rem;
   background-color: white;
   max-width: 1260px;
+
+  ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
 `;
 
 const QnAWrapper = styled.div`
@@ -125,6 +160,11 @@ const QnATitle = styled.p`
 
   ${({ theme }) => theme.media.desktop_L} {
     ${getNotoTypographyStyles('Heading3')}
+  }
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getNotoTypographyStyles('Body2_b')}
+    margin-right: 30px;
   }
 `;
 
@@ -149,4 +189,25 @@ const StyledVerticalLine = styled.div`
   height: 100%;
   background-color: #ccc;
   margin: auto;
+`;
+
+const QnAContainer_mobile = styled.div`
+  display: none;
+
+  ${({ theme }) => theme.media.mobile} {
+    display: flex;
+    color: white;
+  }
+`;
+
+const CommunicationIcon_mobile = styled(CommunicationIcon)`
+  path {
+    stroke: white;
+  }
+`;
+
+const MailIcon_mobile = styled(MailIcon)`
+  path {
+    stroke: white;
+  }
 `;

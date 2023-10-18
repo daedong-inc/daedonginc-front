@@ -102,10 +102,32 @@ const OurProduct = () => {
               nextEl: '.right-button-ourproduct',
             }}
             onSlideChange={(swiper) => {
-              console.log(swiper);
               setActiveCarouselIndex(swiper.activeIndex);
+
+              const isLastSlide = swiper.isEnd;
+              const nextButton = document.querySelector(
+                '.right-button-ourproduct',
+              );
+
+              if (isLastSlide) {
+                nextButton.style.display = 'none';
+              } else {
+                nextButton.style.display = 'block';
+              }
+
+              const isFirstSlide = swiper.isBeginning;
+              const prevButton = document.querySelector(
+                '.left-button-ourproduct',
+              );
+
+              if (isFirstSlide) {
+                prevButton.style.display = 'none';
+              } else {
+                prevButton.style.display = 'block';
+              }
             }}
-            loop={true}
+            loop={false}
+            watchOverflow={true}
           >
             {CarouselData.map((product) => (
               <SwiperSlide key={product.id}>

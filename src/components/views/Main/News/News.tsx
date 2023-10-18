@@ -5,7 +5,7 @@ import {
 } from 'styles/font/font';
 import Button from '@components/common/Button/Button';
 import { ReactComponent as Logo } from 'assets/대동로고.svg';
-import theme from 'theme';
+import { BREAKPOINT_MEDIAQUERY } from 'styles/constants';
 
 const News = () => {
   const newsDatas = [
@@ -32,8 +32,8 @@ const News = () => {
     },
   ];
 
-  const isDeskTop_L = window.innerWidth >= theme.media.desktop_L;
-  const maxItems = isDeskTop_L ? 3 : 4;
+  const isDeskTop_L = window.innerWidth >= BREAKPOINT_MEDIAQUERY.desktop_L;
+  const maxItems = isDeskTop_L ? 4 : 3;
 
   return (
     <Container>
@@ -101,10 +101,18 @@ const Title = styled.div`
 
 const Text_b = styled.span`
   ${getLatoTypographyStyles('Heading3_eb')};
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getLatoTypographyStyles('Body1_eb')};
+  }
 `;
 
 const Text = styled.span`
   ${getLatoTypographyStyles('Heading3')}
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getLatoTypographyStyles('Body1')};
+  }
 `;
 
 const ContentBox = styled.div`
@@ -135,6 +143,13 @@ const NewsBox = styled.div`
     justify-content: space-between;
     height: 514px;
   }
+
+  ${({ theme }) => theme.media.mobile} {
+    height: 360px;
+    flex-direction: column-reverse;
+    height: auto;
+    padding: 20px 0;
+  }
 `;
 
 const NewsTitleBox = styled.div`
@@ -159,6 +174,12 @@ const NewsImageBox = styled.div`
     width: 100%;
     height: 300px;
   }
+
+  ${({ theme }) => theme.media.mobile} {
+    width: 100%;
+    height: 230px;
+    margin-bottom: 10px;
+  }
 `;
 
 const NewsImg = styled.img`
@@ -176,10 +197,20 @@ const NoImg = styled(Logo)`
 
 const Tap = styled.span`
   ${getLatoTypographyStyles('Body2')};
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getLatoTypographyStyles('Body3')};
+  }
 `;
 
-const Date = styled(Tap)``;
+const Date = styled(Tap)`
+  ${getNotoTypographyStyles('Body4_r')};
+`;
 
 const NewsTitle = styled.span`
   ${getNotoTypographyStyles('Body1_b')};
+
+  ${({ theme }) => theme.media.mobile} {
+    ${getNotoTypographyStyles('Body2_b')};
+  }
 `;

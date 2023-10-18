@@ -77,6 +77,10 @@ const Container = styled.div`
   ${({ theme }) => theme.media.desktop_L} {
     height: 980px;
   }
+
+  ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
 `;
 
 const ShowRoomWrapper = styled.div``;

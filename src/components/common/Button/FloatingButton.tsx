@@ -50,4 +50,8 @@ const StyledButton = styled.div<StyledButtonProps>`
   cursor: pointer;
   z-index: 10;
   display: ${({ isVisible }) => (isVisible ? 'block' : 'none')};
+
+  ${({ theme }) => theme.media.mobile} {
+    transform: scale(0.7, 0.7);
+  }
 `;

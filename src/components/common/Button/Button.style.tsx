@@ -22,6 +22,10 @@ export const Container = styled.button<{
   ${({ size, buttontype }) => typeMap[buttontype][size]}
   ${({ outlined, state }) =>
     outlined ? outlinedStyleMap[state] : filledStyleMap[state]}
+
+${({ theme }) => theme.media.mobile} {
+    transform: scale(0.7, 0.7);
+  }
 `;
 
 const filledStyleMap = {
