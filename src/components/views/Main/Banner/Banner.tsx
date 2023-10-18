@@ -17,7 +17,7 @@ export interface CarouselDataType {
 const Banner = () => {
   const CarouselData: CarouselDataType[] = [
     {
-      img: `https://picsum.photos/1440/980?random=${Math.random()}`,
+      img: 'src/assets/Main/banner1.jpg',
       title: 'COSMETIC',
       description: (
         <>

@@ -66,7 +66,10 @@ const Nav = () => {
               color={currentTheme.searchBackgroundColor}
               onSubmit={handleSearchSubmit}
             >
-              <S.SearchIcon color={currentTheme.searchIconColor} />
+              <S.SearchIcon
+                color={currentTheme.searchIconColor}
+                onClick={handleSearchSubmit}
+              />
               <S.SearchInput
                 color={currentTheme.searchFontColor}
                 placeholderColor={currentTheme.searchPlaceholderColor}

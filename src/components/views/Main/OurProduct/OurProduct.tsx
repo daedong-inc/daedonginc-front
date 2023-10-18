@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -21,10 +21,11 @@ export interface CarouselDataType {
 
 const OurProduct = () => {
   const [activeCarouselIndex, setActiveCarouselIndex] = useState(0);
+  const [isFirstSlide, setIsFirstSlide] = useState(true);
   const CarouselData: CarouselDataType[] = [
     {
       id: 1,
-      img: `https://picsum.photos/940/700?random=${Math.random()}`,
+      img: 'src/assets/Main/Rectangle 64.png',
       name: 'Dual Cap Dropper Tube',
       description: (
         <>
@@ -68,6 +69,15 @@ const OurProduct = () => {
     },
   ];
 
+  useEffect(() => {
+    const prevButton = document.querySelector('.left-button-ourproduct');
+    if (isFirstSlide) {
+      prevButton.style.display = 'none';
+    } else {
+      prevButton.style.display = 'block';
+    }
+  }, [isFirstSlide]);
+
   return (
     <Container>
       <Wrapper>
@@ -101,6 +111,9 @@ const OurProduct = () => {
               prevEl: '.left-button-ourproduct',
               nextEl: '.right-button-ourproduct',
             }}
+            onSwiper={(swiper) => {
+              setIsFirstSlide(swiper.isBeginning);
+            }}
             onSlideChange={(swiper) => {
               setActiveCarouselIndex(swiper.activeIndex);
 
@@ -115,16 +128,7 @@ const OurProduct = () => {
                 nextButton.style.display = 'block';
               }
 
-              const isFirstSlide = swiper.isBeginning;
-              const prevButton = document.querySelector(
-                '.left-button-ourproduct',
-              );
-
-              if (isFirstSlide) {
-                prevButton.style.display = 'none';
-              } else {
-                prevButton.style.display = 'block';
-              }
+              setIsFirstSlide(swiper.isBeginning);
             }}
             loop={false}
             watchOverflow={true}
